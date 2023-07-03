@@ -8,21 +8,22 @@ public class Calculator {
 		String[] words = full.split("\\s+"); // 받아온 String을 space로 구분해 분리해준다.
 		
 		int num1 = Integer.parseInt(words[0]); //String을 int형으로 형변환 시켜준다. (casting)
-
-		System.out.print(num1+" "+words[1]+" "+Integer.parseInt(words[2])+" = ");
+		String oper = words[1];
+		int num2 = Integer.parseInt(words[2]);
+		System.out.print(num1+" "+ oper +" "+ num2 +" = ");
 		
 		switch (words[1]) { //switch 문으로 연산자를 구분해 계산한 값을 뒤에 넣어준다.
 		case "+":
-			System.out.print(num1+Integer.parseInt(words[2])); //문장이 자연스럽게 이어지도록 print를 쓴다.
+			System.out.print(num1+num2); //문장이 자연스럽게 이어지도록 print를 쓴다.
 			break;
 		case "-":
-			System.out.print(num1-Integer.parseInt(words[2]));
+			System.out.print(num1-num2);
 			break;
 		case "*":
-			System.out.print(num1*Integer.parseInt(words[2]));
+			System.out.print(num1*num2);
 			break;
 		case "/":
-			System.out.print(num1/Integer.parseInt(words[2]));
+			System.out.print(num1/num2);
 			break;
 		}
 	}
